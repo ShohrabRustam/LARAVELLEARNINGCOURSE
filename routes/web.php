@@ -2,6 +2,8 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\LearningController;
+use Illuminate\Support\Facades\DB;
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -13,15 +15,28 @@ use App\Http\Controllers\LearningController;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
+// Route::get('/', function () {
+//     return view('welcome');
+// });
+
+// //call with learning/create
+// Route::resource('/learning',LearningController::class);
+
+// Route::get('/contact', [LearningController::class,'contact']);
+
+// Route::get('/post',function(){
+//     return view('vander.post');
+// });
+
+
+/**
+ * @author Rustam
+ * @application Route
+ */
+Route::get('/insert',function(){
+DB::insert('insert into posts(title,content) values(?,?)',['PHP with Laravel','Laravel is best thing that has happen to PHP']);
+
+
 });
 
-//call with learning/create
-Route::resource('/learning',LearningController::class);
 
-Route::get('/contact', [LearningController::class,'contact']);
-
-Route::get('/post',function(){
-    return view('vander.post');
-});
