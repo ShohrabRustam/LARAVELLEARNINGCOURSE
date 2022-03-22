@@ -67,7 +67,12 @@ Route::get('/find',function(){
 
 });
 
+// Route::get('/findwhere',function(){
+// $posts=Post::where('id',2)->orderBy('id','desc');
+// return $posts->title;
+// });
+
 Route::get('/findwhere',function(){
-$posts=Post::where('id',2)->orderBy('id','desc');
-return $posts->title;
-});
+    $posts=Post::where('id',2)->orderBy('id','desc')->take(1)->get();
+    return $posts->title;
+    });
