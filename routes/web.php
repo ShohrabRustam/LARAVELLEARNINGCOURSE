@@ -47,3 +47,8 @@ var_dump($results) ;
 
 
 });
+
+Route::get('/update',function(){
+$update = DB::update('update posts set title = "updated title" where id = ?', ['1']);
+return $update;
+});
