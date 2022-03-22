@@ -2,8 +2,8 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\LearningController;
+use App\Models\Post;
 use Illuminate\Support\Facades\DB;
-
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -57,4 +57,16 @@ Route::get('/delete',function()
 {
 $delete = DB::delete('delete from posts where id =?',[1]);
 return $delete;
+});
+
+Route::get('/find',function(){
+    $posts = Post::all();
+    foreach($posts as $post){
+        return $post->title;
+    }
+
+});
+
+Route::get('/findwhere',function(){
+
 });
