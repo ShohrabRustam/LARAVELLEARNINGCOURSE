@@ -83,4 +83,14 @@ class LearningController extends Controller
     {
         //
     }
+
+    public function contact(){
+        $people = ["Rustam","Shakib","Danish","Wasi1"];
+        return view('vander.contact',compact('people'));
+    }
+
+    public function post(){
+        return view('vander.post');
+    }
+
 }

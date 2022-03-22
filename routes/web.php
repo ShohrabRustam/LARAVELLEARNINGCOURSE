@@ -18,4 +18,10 @@ Route::get('/', function () {
 });
 
 //call with learning/create
-Route::resource('learning',LearningController::class);
+Route::resource('/learning',LearningController::class);
+
+Route::get('/contact', [LearningController::class,'contact']);
+
+Route::get('/post',function(){
+    return view('vander.post');
+});
