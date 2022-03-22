@@ -40,3 +40,10 @@ DB::insert('insert into posts(title,content) values(?,?)',['PHP with Laravel','L
 });
 
 
+Route::get('/read',function(){
+$results = DB::select('select * from posts where id=?',[1]);
+
+var_dump($results) ;
+
+
+});
