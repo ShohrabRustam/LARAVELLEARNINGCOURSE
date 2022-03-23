@@ -122,3 +122,7 @@ Route::get('/delete2',function(){
        return $post;
 
    });
+
+   Route::get('/restore',function(){
+    Post::withTrashed()->where('id',3)->restore();
+   });
