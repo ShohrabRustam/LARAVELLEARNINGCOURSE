@@ -130,3 +130,4 @@ Route::get('/delete2',function(){
    Route('/forcedelete',function(){
     Post::withTrashed()->where('id',3)->forceDelete();
    });
+
