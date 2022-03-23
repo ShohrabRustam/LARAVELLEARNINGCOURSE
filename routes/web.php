@@ -126,3 +126,7 @@ Route::get('/delete2',function(){
    Route::get('/restore',function(){
     Post::withTrashed()->where('id',3)->restore();
    });
+
+   Route('/forcedelete',function(){
+    Post::withTrashed()->where('id',3)->forceDelete();
+   });
