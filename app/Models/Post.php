@@ -10,4 +10,8 @@ class Post extends Model
     use HasFactory;
     protected $table = "posts";
     protected $primarykey = 'id';
+    protected $fillable=[
+        'title',
+        'content'
+    ];
 }

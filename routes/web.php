@@ -15,12 +15,12 @@ use Illuminate\Support\Facades\DB;
 |
 */
 
-// Route::get('/', function () {
-//     return view('welcome');
-// });
+Route::get('/', function () {
+    return view('welcome');
+});
 
 // //call with learning/create
-// Route::resource('/learning',LearningController::class);
+Route::resource('/learning',LearningController::class);
 
 // Route::get('/contact', [LearningController::class,'contact']);
 
@@ -80,4 +80,16 @@ Route::get('/findwhere',function(){
 Route::get('/findmore',function(){
     $posts = Post::findOrFail(2);
     return $posts;
+});
+
+Route::get('/basicinsert',function(){
+    $post =new  Post();
+    $post->title="PHP BEST LANGUAGE";
+    $post->content="This is the best fall in love language ";
+    $post->save();
+    return "Success Insert !!";
+});
+
+Route::get('/create',function(){
+    Post::create(['title'=>'the create method ','content'=>'Wow!! I \'am learning alot with myself' ]);
 });
