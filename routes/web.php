@@ -4,7 +4,6 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\LearningController;
 use App\Models\Post;
 use Illuminate\Support\Facades\DB;
-use Illuminate\Database\Eloquent\SoftDeletes;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -108,5 +107,10 @@ Route::get('/deleteData',function(){
 
 Route::get('/delete2',function(){
     Post::destroy([1]);
+
+   });
+
+   Route::get('softdelete',function(){
+       Post::find(3)->delete();
 
    });
