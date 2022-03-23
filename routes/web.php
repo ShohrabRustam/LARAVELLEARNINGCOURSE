@@ -93,3 +93,7 @@ Route::get('/basicinsert',function(){
 Route::get('/create',function(){
     Post::create(['title'=>'the create method ','content'=>'Wow!! I \'am learning alot with myself' ]);
 });
+
+Route::get('updateData',function(){
+Post::where('id',3)->where('title','PHP with Laravel')->update(['title'=>'NEW TITLE','content'=>"NEW CONTENCNT"]);
+});
