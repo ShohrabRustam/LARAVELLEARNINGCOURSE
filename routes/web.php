@@ -97,3 +97,15 @@ Route::get('/create',function(){
 Route::get('updateData',function(){
 Post::where('id',3)->where('title','PHP with Laravel')->update(['title'=>'NEW TITLE','content'=>"NEW CONTENCNT"]);
 });
+
+Route::get('/deleteData',function(){
+ $post  = Post::find(3);
+ $post->delete();
+
+});
+
+
+Route::get('/delete2',function(){
+    Post::destroy([1]);
+
+   });
