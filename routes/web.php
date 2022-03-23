@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\LearningController;
 use App\Models\Post;
+use Illuminate\Routing\RouteCollection;
 use Illuminate\Support\Facades\DB;
 /*
 |--------------------------------------------------------------------------
@@ -112,5 +113,12 @@ Route::get('/delete2',function(){
 
    Route::get('softdelete',function(){
        Post::find(3)->delete();
+
+   });
+
+   Route::get('/readsoftdelete',function(){
+    //    $post= Post::withTrashed()->where('id',3)->get();
+    $post=Post::onlyTrashed()->where('id',3)->get();
+       return $post;
 
    });
